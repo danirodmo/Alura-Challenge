@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es-co">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ 
+<script>
+	//input id=cifrarTexto.focus;
+	function cifrar(){
+		var textoCifrar=document.getElementById("cifrarTexto").value;
+		textoCifrar=textoCifrar.replace(/a/gi,"1");
+		textoCifrar=textoCifrar.replace(/e/gi,"2");
+		textoCifrar=textoCifrar.replace(/i/gi,"3");
+		textoCifrar=textoCifrar.replace(/o/gi,"4");
+		textoCifrar=textoCifrar.replace(/u/gi,"5");
+		textoCifrar=textoCifrar.replace(/1/gi,"ai");
+		textoCifrar=textoCifrar.replace(/2/gi,"enter");
+		textoCifrar=textoCifrar.replace(/3/gi,"imes");
+		textoCifrar=textoCifrar.replace(/4/gi,"ober");
+		textoCifrar=textoCifrar.replace(/5/gi,"ufat");
+		document.getElementById("descifrarTexto").value=textoCifrar;
+	}
+		
+	function descifrar(){
+		var textodesCifrar=document.getElementById("descifrarTexto").value;
+		textodesCifrar=textodesCifrar.replace(/ai/gi,"1");
+		textodesCifrar=textodesCifrar.replace(/enter/gi,"2");
+		textodesCifrar=textodesCifrar.replace(/imes/gi,"3");
+		textodesCifrar=textodesCifrar.replace(/ober/gi,"4");
+		textodesCifrar=textodesCifrar.replace(/ufat/gi,"5");
+		textodesCifrar=textodesCifrar.replace(/1/gi,"a");
+		textodesCifrar=textodesCifrar.replace(/2/gi,"e");
+		textodesCifrar=textodesCifrar.replace(/3/gi,"i");
+		textodesCifrar=textodesCifrar.replace(/4/gi,"o");
+		textodesCifrar=textodesCifrar.replace(/5/gi,"u");
+		document.getElementById("textoDescifrado").value=textodesCifrar;
+	}
+
+	function copiarTexto(){
+		var copiar=document.getElementById("textoDescifrado");
+		navigator.clipboard.writeText(copiar.value);
+  
+	}
+
+	
+</script>
+
+</head>
+<body>
+ 	<h1 class="titulo" style="text-align:left">MENSAJE CIFRADO</h1>
+	<input id="cifrarTexto" type="text" placeholder="Ingrese el texto aqui">
+	<input id="Cifrar" type="button" value="Cifrar" onclick="cifrar()"> 
+	<br/><br/>
+	<input id="descifrarTexto" type="text" placeholder="Texto Cifrado">
+	<input id="descifrar" type="button" value="Descifrar" onclick="descifrar()">
+	<br/><br/>
+	<input id="textoDescifrado" type="text" placeholder="Texto Descifrado">
+	<br/><br/>
+	<input id="Copiar" type="button" value="Copiar" onclick="copiarTexto()">
+
+<footer>
+	<p><br/><br/><br/><br/><br/><br/><br/><br/>Daniel Rodríguez</p>
+</footer>
+ 
+</body>
+</html>
